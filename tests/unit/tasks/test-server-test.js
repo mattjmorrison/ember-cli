@@ -19,7 +19,7 @@ describe('test server', function() {
       addonMiddlewares: function() {
         return ['middleware1', 'middleware2'];
       },
-      testem: {
+      runner: {
         startDev: function(options) {
           assert.equal(options.file, 'blahzorz.conf');
           assert.equal(options.port, 123324);

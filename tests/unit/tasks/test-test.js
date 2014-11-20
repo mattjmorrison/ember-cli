@@ -13,7 +13,7 @@ describe('test', function() {
       addonMiddlewares: function() {
         return ['middleware1', 'middleware2'];
       },
-      testem: {
+      runner: {
         startCI: function(options, cb) {
           assert.equal(options.file, 'blahzorz.conf');
           assert.equal(options.port, 123324);
