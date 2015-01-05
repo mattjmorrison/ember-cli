@@ -28,7 +28,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
-    // Testem prefers this...
+    // Testem prefers this... // TODO make generic???
     ENV.baseURL = '/';
     ENV.locationType = 'none';
 
