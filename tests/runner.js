@@ -4,7 +4,7 @@ var glob = require('glob');
 var Mocha = require('mocha');
 
 var mocha = new Mocha({
-  timeout: 5000,
+  timeout: 50000000,
   reporter: 'spec'
 });
 
@@ -15,11 +15,11 @@ function addFiles(mocha, files) {
   glob.sync(root + files).forEach(mocha.addFile.bind(mocha));
 }
 
-addFiles(mocha, '/**/*-test.js');
+addFiles(mocha, '/**/smoke-test-slow.js');
 
-if (arg === 'all') {
-  addFiles(mocha, '/**/*-slow.js');
-}
+// if (arg === 'all') {
+//   addFiles(mocha, '/**/*-slow.js');
+// }
 
 mocha.run(function(failures) {
   process.on('exit', function() {
